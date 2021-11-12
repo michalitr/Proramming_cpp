@@ -1,4 +1,3 @@
-#pragma once
 #include <iostream>
 #include "string.h"
 #include "Person.h"
@@ -57,6 +56,7 @@ using namespace std;
             }
             void setEmail(char* email)
             {
+                char* ptr = strstr
                 cout << getName(this->m_name) << "'s email updated to " << email << ".\n" << endl;
                 strcpy(this->m_email, email);
             }
@@ -83,5 +83,58 @@ using namespace std;
             { 
                 cout <<"Name: " << getName(this->m_name) <<"\n Phone number: " << getPhoneNumber() << "\n Email:" <<  getEmail() <<  "\n" << endl;
             }
+             bool    validateEmail(const char* email){
+                    // int x = 30; //random size enough to hold contents of array plus one for               null terminator
+                    // char input[x]; //array to hold input
+                    int sizeOf; //holds length of input array
+                    char* ptr = nullptr; //pointer
+                    char* ptr2 = nullptr; //pointer
 
-        }
+                    // input = email;
+                    
+                    sizeOf = strlen(email);
+
+                    for(int i = 0; i < sizeOf; i++)
+                    {
+                        ptr= strstr(email, "@"); //searches email array for "@" string
+                        if(ptr != nullptr) 
+                        {
+                            break;
+                        }
+                    }
+
+                    for(int i = 0; i < sizeOf; i++)
+                    {
+                        ptr2 = strstr(email, "."); //searches email array for "." string
+                        if(ptr2 != nullptr && &ptr2 > &ptr)
+                        {
+                            break;
+                        }
+                    }
+
+                    if(ptr != nullptr) //validates email of "@" sign
+                    {
+                        if(ptr2 != 0 && &ptr2 < &ptr) 
+                            {
+                                cout << "Email accepted.\n";
+                                return true;
+                            }
+
+                        else
+                            {
+                                cout << "Missing . symbol after @\n";
+                                return false;
+                            }
+                    }
+
+                    else
+                    {
+                        cout << "Missing @ symbol\n";
+                        return false;
+
+                    }
+
+
+             }
+
+        };

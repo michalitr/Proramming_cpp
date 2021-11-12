@@ -26,4 +26,4 @@ class Job {
         char* m_title;
         int m_salary;
         DepartmentEnum m_department;
-}
+};

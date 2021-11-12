@@ -32,6 +32,8 @@ int main() {
     Job& job = new Job();
     Person p1 = new ("michal", "050", "michal@com", address, job); // by rederence 
     Person p1 = new ("michal", "050", "michal@com", new Address(jvlfjvjfsdbv), new Job(ljdsnfjkdsbfkj)); // by value
+    Person p3 = new Person();
+    p1.m_job.Work();
 
 
 }

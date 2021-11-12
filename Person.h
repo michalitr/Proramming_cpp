@@ -21,7 +21,8 @@ class Person{
         int     getSaving() const;
         char*   OrderFood(Address& address, int amount);
         void    printPerson();
-        void  printPerson() const;
+        void     printPerson() const;
+        bool    validateEmail(const char* m_email);
 
     private:
         char* m_name;
@@ -30,4 +31,4 @@ class Person{
         int m_savings;
         Address m_address;
         Job m_job;
-}
+};
