@@ -23,6 +23,8 @@ class Person{
         void    printPerson();
         void     printPerson() const;
         bool    validateEmail(const char* m_email);
+        Job     getJob() const;
+        Address     getAddress() const;
 
     private:
         char* m_name;

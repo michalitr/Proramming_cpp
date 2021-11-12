@@ -56,9 +56,12 @@ using namespace std;
             }
             void setEmail(char* email)
             {
-                char* ptr = strstr
-                cout << getName(this->m_name) << "'s email updated to " << email << ".\n" << endl;
-                strcpy(this->m_email, email);
+                bool isValidate = validateEmail(email);
+                if (isValidate)
+                {
+                    cout << getName(this->m_name) << "'s email updated to " << email << ".\n" << endl;
+                    strcpy(this->m_email, email);
+                 }
             }
             char* getEmail() const
             {
@@ -67,6 +70,14 @@ using namespace std;
             int getSaving() const
             {
                 return this->m_savings;
+            }
+            Job getJob() const
+            {
+                return this->m_job;
+            }
+            Address getAddress() const
+            {
+                return this->m_address;
             }
             char* OrderFood(Address& address, int amount)
             {
