@@ -26,8 +26,15 @@ using namespace std;
             
             void setTitle(const char* title)
             {
-                cout <<  getTitle() << "'s title updated to " << title << "'s title.\n" << endl;
-                strcpy(this->m_title, title);
+                 char* str = "";
+                if (strcmp == 0)
+                {
+                    cout <<  getTitle() << "'s title updated to " << title << "'s title.\n" << endl;
+                    strcpy(this->m_title, title);
+                }else{
+                     cout <<"title is illegal" << endl;
+
+                }
             }
             char* getTitle() const
             {
@@ -35,8 +42,14 @@ using namespace std;
             }
             void setSalary(int salary)
             {
-                cout << getSalary() << "'s salary updated to " << salary << "'s salary.\n" << endl;
-                this->m_salary = salary;
+                if (salary == -1)
+                {
+                     cout << getSalary() << "'s salary updated to " << salary << "'s salary.\n" << endl;
+                     this->m_salary = salary;
+                }else{
+
+                }
+    
             }
             int getSalary() const
             {
@@ -44,8 +57,13 @@ using namespace std;
             }
             void setDepartment(DepartmentEnum department)
             {
-                this->m_department = department;
-                cout << getDepartment() << "'s department updated to" << department << "'s department.\n" << endl;
+                if (department == PRODUCT || department == SALES || department == MARKETING || department == ART )
+                {
+                    this->m_department = department;
+                    cout << getDepartment() << "'s department updated to" << department << "'s department.\n" << endl;
+                }else{
+                     cout <<"deprartment is illegal" << endl;
+                }                
             }
             DepartmentEnum getDepartment() const
             {

@@ -28,26 +28,45 @@ using namespace std;
 
             void setStreet(char* street) 
             {
+                 char* str = "";
+                if (strcmp == 0)
+                {
                 cout << getStreet() << "'s street updated to" << street <<"'s street.\n"  << endl;
                 this->m_Street = strdup(street));
+                }else{
+                    cout <<"street is illegal" << endl;
+                }
             }
             char* getStreet() const
             {
                 return this->m_Street;
             }
-            void etCity(char* city)
+            void setCity(char* city)
             {
+                 char* str = "";
+                if (strcmp == 0)
+                {
                 cout << getCity() << "'s city updated to "<< city << " 's city.\n" << endl;
                 strcpy(this->m_City, city);
+                }else{
+                    cout <<"city is illegal" << endl;
+                }
             }
             char* getCity() const
             {
                 return this->m_City;
             }
-            void getPostalCode(int postalCode) 
+            void setPostalCode(int postalCode) 
             {
-                cout <<  getPostalCode() << "'s postal code updated to " << postalCode << "'s postal code.\n"  << endl;
-                this->m_PostalCode = postalCode;
+                if (postalCode != -1)
+                {
+                    cout <<  getPostalCode() << "'s postal code updated to " << postalCode << "'s postal code.\n"  << endl;
+                    this->m_PostalCode = postalCode;
+                }else{
+                    cout <<"postal code is illegal" << endl;
+                }
+                
+                
             }
             int getPostalCode() const
             {
