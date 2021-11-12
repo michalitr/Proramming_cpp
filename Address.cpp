@@ -22,7 +22,9 @@ using namespace std;
                 setPostalCode(postalCode);
                 printAddress();
             }
-            ~Address() {}
+            ~Address() {
+                 cout <<"Address is deleted" << endl;
+            }
 
             void setStreet(char* street) 
             {

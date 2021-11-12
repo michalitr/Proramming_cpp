@@ -20,7 +20,9 @@ using namespace std;
                 setDepartment(departmenmt);
             }
             
-            ~Job() {}
+            ~Job() {
+                 cout <<"Job is deleted" << endl;
+            }
             
             void setTitle(const char* title)
             {

@@ -8,32 +8,30 @@
 using namespace std;
 
 int main() {
-    Person person = new Person;
-    Person Osnat  = new Person("Osnat", "0546767676", "Osnat@gmail.com", 30000, 
-                                {"Blau","Tel Aviv", 5500}, {"Web developer", 15000, "Art"});
-    Person Daniel = new Person("Daniel", "036718191", "Daniel@gmail.com", 20000, 
-                                {"Machlof", "Natanya", 5555}, {"QA developer", 20000, "Product"});
-    person.m_job.Work();
-    person.OrderFood(Osnat.m_address, 60);
-    person.m_job.Retire();
-
-    Osnat.m_job.Work();
-    Osnat.OrderFood(Osnat.m_address, 50);
-    Osnat.m_job.Retire();
+    //Defualt Con's for p1
+    Person p1 = new Person; 
+    //New person 
+    Address *adr1 = new Address("Berkovich", "LOD", 0);
+    Job *job1 = new Job("Singer",10000, PRODUCT);
+    Person p2 = new Person("", "", "orenwalla.com", adr1, job1);
+    //new pointer person
+    Address *adr2 = new Address;
+    Job *job2 = new Job;
+    Person *p3 = new Person("michal", "050", "michal@com", adr2, job2); 
     
-    Daniel.m_job.Work();
-    Daniel.OrderFood(Osnat.m_address, 80);
-    Daniel.m_job.Retire();
+    p1.getJob().Work();
+    p1.OrderFood(p1.getAddress(), 20);
+    p1.getJob().Retire();
 
-    Address& address = new Address();
-    int x;
-    int* ptr = x;
-    ptr->8;
-    Job& job = new Job();
-    Person p1 = new ("michal", "050", "michal@com", address, job); // by rederence 
-    Person p1 = new ("michal", "050", "michal@com", new Address(jvlfjvjfsdbv), new Job(ljdsnfjkdsbfkj)); // by value
-    Person p3 = new Person();
-    p1.m_job.Work();
+    p2.getJob().Work();
+    p2.OrderFood(p2.adr2, 50);
+    p2.getJob().Retire();
+    
+    
+    p3->getJob().Work();
+    p3->OrderFood(p3.getAddress(), 50);
+    p3->getJob().Retire();
+    delete p3;
 
 
 }

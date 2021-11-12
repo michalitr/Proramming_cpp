@@ -9,9 +9,9 @@ using namespace std;
         class Person{
         Person()
             {
-                setName(NULL);
-                setPhoneNumber(NULL);
-                setEmail(NULL);
+                setName("");
+                setPhoneNumber("");
+                setEmail("");
                 Address();
                 Job();
                 cout <<"A new person obj was created with\n" << endl;
@@ -29,20 +29,31 @@ using namespace std;
                 printPerson();
                 
             }
-            ~Person() {}
+            ~Person() {
+                 cout <<"Person is deleted" << endl;
+            }
 
             void setName(char* name)
             {
-                cout << getName(name) << "'s name updated to " << name << ".\n" << endl;
-                strcpy(this->m_name, name);
+                char* str = "";
+                if (strcmp == 0)
+                {
+                    cout << getName(name) << "'s name updated to " << name << ".\n" << endl;
+                    strcpy(this->m_name, name);
+                }else{
+                    cout << "Name is empty.\n" << endl;
+
+                }
+                
+                
             }
             char* getName(char* name)
             {
                 return this->m_name;
             }
-            void setPhoneNumber(char* phoneNumber)
+            void setPhoneNumber(const char* phoneNumber)
             {
-                if (phoneNumber[0]!=0)
+                if (strlen(phoneNumber) != 11)
                 {
                     cout << "This field must start with the digit '0'. Please re-enter a valid parameter.\n" << endl;
                     return;
