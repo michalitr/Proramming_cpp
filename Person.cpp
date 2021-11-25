@@ -1,5 +1,5 @@
 #include <iostream>
-#include "string.h"
+#include <string>
 #include "Person.h"
 #include "Job.h"
 #include "Address.h"
@@ -15,8 +15,8 @@ using namespace std;
                 Job();
                 cout <<"A new person obj was created with\n" << endl;
                 printPerson();
-
             }
+
            Person::Person(const char* name,const char* phoneNumber,const char* email, Address& address, Job& job)
             {
                 setName(strdup(name));
@@ -28,6 +28,21 @@ using namespace std;
                 printPerson();
                 
             }
+            Person::Person(const Person& p){
+                *this = p;
+                printPerson();
+            }
+
+            Person& Person::operator=(const Person& p){
+                if(this == &p) return *this;
+                setName(strdup(p.getName()));
+                setPhoneNumber(strdup(p.getPhoneNumber()));
+                setEmail(strdup(p.getEmail()));
+                Address(p.getAddress());
+                Job(p.getJob());
+                return *this;
+            }
+
             Person::~Person() {
                  cout <<"Person is deleted" << endl;
             }
@@ -41,10 +56,7 @@ using namespace std;
                     strcpy(this->m_name, name);
                 }else{
                     cout << "Name is empty.\n" << endl;
-
-                }
-                
-                
+                }  
             }
             char* Person::getName(char* name)
             {
@@ -156,4 +168,7 @@ using namespace std;
                     }
 
 
-             };
+             }
+
+
+        };

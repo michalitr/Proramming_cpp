@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include "string.h"
 
@@ -9,6 +10,8 @@ class Job {
     public:
         Job();
         Job(const char* title, int salary, DepartmentEnum departmenmt);
+        Job(const Job&);//Copy constructor
+        Job& operator=(const Job&);//Assigment operator
         ~Job();
         
         void    setTitle(const char* title);

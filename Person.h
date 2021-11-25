@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include "string.h"
 #include "Address.h"
@@ -9,6 +10,8 @@ class Person{
     public:
         Person();
         Person(const char* name,const char* phoneNumber,const char* email, const Address& address, const Job& job);
+        Person(const Person&);//Copy constructor
+        Person& operator=(const Person&);//Assigment operator
         ~Person();
 
         void    setName(char* name);
@@ -24,7 +27,7 @@ class Person{
         bool    validateEmail(const char* m_email);
         Job     getJob() const;
         Address     getAddress() const;
-
+        
     private:
         char* m_name;
         char* m_phoneNumber;
