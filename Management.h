@@ -1,3 +1,4 @@
+#pragma once
 #include "Person.h"
 
 using namespace std;
@@ -10,13 +11,16 @@ class Management{
         ~Management();
 
     public:
-	    void addPerson(const Person& p);
+	    bool addPerson(const Person& person);
 	    //void removePerson(int idx, Position& pos);
         void doubleSize();
+        int getFirstFree() { return m_maxPersons};
+        bool removePerson(const Person& person);
+        void printPersonsArray();
 
     private:
-	    const char*	m_person;
 	    int	m_maxPersons;
 	    int	m_currPerson;
 	    Person** prArray;
+        
 };
