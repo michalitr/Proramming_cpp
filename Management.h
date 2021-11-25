@@ -14,7 +14,7 @@ class Management{
 	    bool addPerson(const Person& person);
 	    //void removePerson(int idx, Position& pos);
         void doubleSize();
-        int getFirstFree() { return m_maxPersons};
+        int getFirstFree() { return m_currPerson};
         bool removePerson(const Person& person);
         void printPersonsArray();
 
