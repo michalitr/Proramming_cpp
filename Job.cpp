@@ -4,15 +4,14 @@
 
 using namespace std;
 
-        class Job{
-            Job()
+            Job::Job()
             {
                 cout << "Making a new job.\n" << endl;
                 setTitle("");
                 setSalary(-1);
                 setDepartment("");
             }
-            Job(const char* title, int salary, DepartmentEnum departmenmt)
+            Job::Job(const char* title, int salary, DepartmentEnum departmenmt)
             {
                 cout << "Making a new job.\n" << endl;
                 setTitle(strdup(title));
@@ -20,11 +19,11 @@ using namespace std;
                 setDepartment(departmenmt);
             }
             
-            ~Job() {
+            Job::~Job() {
                  cout <<"Job is deleted" << endl;
             }
             
-            void setTitle(const char* title)
+            void Job::setTitle(const char* title)
             {
                  char* str = "";
                 if (strcmp == 0)
@@ -36,11 +35,11 @@ using namespace std;
 
                 }
             }
-            char* getTitle() const
+            char* Job::getTitle() const
             {
                 return this->m_title;
             }
-            void setSalary(int salary)
+            void Job::setSalary(int salary)
             {
                 if (salary == -1)
                 {
@@ -51,11 +50,11 @@ using namespace std;
                 }
     
             }
-            int getSalary() const
+            int Job::getSalary() const
             {
                 return this->m_salary;
             }
-            void setDepartment(DepartmentEnum department)
+            void Job::setDepartment(DepartmentEnum department)
             {
                 if (department == PRODUCT || department == SALES || department == MARKETING || department == ART )
                 {
@@ -65,11 +64,11 @@ using namespace std;
                      cout <<"deprartment is illegal" << endl;
                 }                
             }
-            DepartmentEnum getDepartment() const
+            DepartmentEnum Job::getDepartment() const
             {
                 return this->m_department;
             }
-            int Work()
+            int Job::Work()
             {
                 if (this->m_salary == -1)
                 {
@@ -78,15 +77,15 @@ using namespace std;
                 }
                 return this->m_salary;
             }
-            void Retire()
+            void Job::Retire()
             {                
                 cout << "This person has retired.\n" << endl;
                 setTitle("");
                 setSalary(-1);
                 setDepartment("");
             }
-            void static printJob() const
+            void static Job::printJob() const
             {
                 cout <<"Title: " << getTitle() << "\n Salary: " << getSalary() <<  "\n Department: " << getDepartment() << endl;
             }
-        }
+        

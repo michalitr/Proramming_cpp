@@ -4,9 +4,9 @@
 
 using namespace std;
 
-        class Address{
+       
 
-            Address()
+            Address::Address()
             {
                 setStreet("");
                 setCity("");
@@ -14,7 +14,7 @@ using namespace std;
                 cout <<"A new person obj was created with " << endl;
                 printAddress();
             }
-            Address(const char* street,const char* City, int postalCode)
+            Address::Address(const char* street,const char* City, int postalCode)
             {
                 cout <<"Making a new address.\n" << endl;
                 setStreet(strdup(street));
@@ -22,11 +22,11 @@ using namespace std;
                 setPostalCode(postalCode);
                 printAddress();
             }
-            ~Address() {
+            Address::~Address() {
                  cout <<"Address is deleted" << endl;
             }
 
-            void setStreet(char* street) 
+            void Address::setStreet(char* street) 
             {
                  char* str = "";
                 if (strcmp == 0)
@@ -37,11 +37,11 @@ using namespace std;
                     cout <<"street is illegal" << endl;
                 }
             }
-            char* getStreet() const
+            char* Address::getStreet() const
             {
                 return this->m_Street;
             }
-            void setCity(char* city)
+            void Address::setCity(char* city)
             {
                  char* str = "";
                 if (strcmp == 0)
@@ -52,11 +52,11 @@ using namespace std;
                     cout <<"city is illegal" << endl;
                 }
             }
-            char* getCity() const
+            char* Address::getCity() const
             {
                 return this->m_City;
             }
-            void setPostalCode(int postalCode) 
+            void Address::setPostalCode(int postalCode) 
             {
                 if (postalCode != -1)
                 {
@@ -68,12 +68,11 @@ using namespace std;
                 
                 
             }
-            int getPostalCode() const
+            int Address::getPostalCode() const
             {
                 return this->m_PostalCode;
             }
-            void static printAddress() const
+            void static Address::printAddress() const
             {
                 cout <<"Street: " << getStreet() << "\n City: " << getCity() <<"\n Postal Code: "<< getPostalCode() << endl;
-            }
-        };
+            };

@@ -23,14 +23,13 @@ int main() {
     p1.OrderFood(p1.getAddress(), 20);
     p1.getJob().Retire();
 
-    p2.getJob().Work();
-    p2.OrderFood(p2.adr2, 50);
-    p2.getJob().Retire();
+    p2.job1.Work();
+    p2.OrderFood(p2.adr1, 50);
+    p2.job1.Retire();
     
-    
-    p3->getJob().Work();
-    p3->OrderFood(p3.getAddress(), 50);
-    p3->getJob().Retire();
+    p3->job2.Work();
+    p3->OrderFood(p3.adr2, 50);
+    p3->job2.Retire();
     delete p3;
 
 

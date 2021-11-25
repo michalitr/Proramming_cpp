@@ -6,8 +6,7 @@
 
 using namespace std;
 
-        class Person{
-        Person()
+        Person::Person()
             {
                 setName("");
                 setPhoneNumber("");
@@ -18,7 +17,7 @@ using namespace std;
                 printPerson();
 
             }
-           Person(const char* name,const char* phoneNumber,const char* email, Address& address, Job& job)
+           Person::Person(const char* name,const char* phoneNumber,const char* email, Address& address, Job& job)
             {
                 setName(strdup(name));
                 setPhoneNumber(strdup(phoneNumber));
@@ -29,11 +28,11 @@ using namespace std;
                 printPerson();
                 
             }
-            ~Person() {
+            Person::~Person() {
                  cout <<"Person is deleted" << endl;
             }
 
-            void setName(char* name)
+            void Person::setName(char* name)
             {
                 char* str = "";
                 if (strcmp == 0)
@@ -47,11 +46,11 @@ using namespace std;
                 
                 
             }
-            char* getName(char* name)
+            char* Person::getName(char* name)
             {
                 return this->m_name;
             }
-            void setPhoneNumber(const char* phoneNumber)
+            void Person::setPhoneNumber(const char* phoneNumber)
             {
                 if (strlen(phoneNumber) != 11)
                 {
@@ -61,11 +60,11 @@ using namespace std;
                 strcpy(this->m_phoneNumber, phoneNumber);            
                 cout << getName(this->m_name) << "'s phone number updated to " << phoneNumber <<  ".\n" << endl;           
             }
-            char* getPhoneNumber() const
+            char* Person::getPhoneNumber() const
             {
                 return this->m_phoneNumber;
             }
-            void setEmail(char* email)
+            void Person::setEmail(char* email)
             {
                 bool isValidate = validateEmail(email);
                 if (isValidate)
@@ -74,23 +73,23 @@ using namespace std;
                     strcpy(this->m_email, email);
                  }
             }
-            char* getEmail() const
+            char* Person::getEmail() const
             {
                 return this->m_email;
             }
-            int getSaving() const
+            int Person::getSaving() const
             {
                 return this->m_savings;
             }
-            Job getJob() const
+            Job Person::getJob() const
             {
                 return this->m_job;
             }
-            Address getAddress() const
+            Address Person::getAddress() const
             {
                 return this->m_address;
             }
-            char* OrderFood(Address& address, int amount)
+            char* Person::OrderFood(Address& address, int amount)
             {
                 if (getSaving()<=0)
                 {
@@ -101,11 +100,11 @@ using namespace std;
                     address.getPostalCode() << "the amount is " << amount << "ILS.\n" << endl;
                             
             }
-            void printPerson() const
+            void Person::printPerson() const
             { 
                 cout <<"Name: " << getName(this->m_name) <<"\n Phone number: " << getPhoneNumber() << "\n Email:" <<  getEmail() <<  "\n" << endl;
             }
-             bool    validateEmail(const char* email){
+             bool    Person::validateEmail(const char* email){
                     // int x = 30; //random size enough to hold contents of array plus one for               null terminator
                     // char input[x]; //array to hold input
                     int sizeOf; //holds length of input array
@@ -157,6 +156,4 @@ using namespace std;
                     }
 
 
-             }
-
-        };
+             };
