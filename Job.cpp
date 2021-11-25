@@ -1,5 +1,5 @@
 #include <iostream>
-#include "string.h"
+#include <string>
 #include "Job.h"
 
 using namespace std;
@@ -18,7 +18,16 @@ using namespace std;
                 setSalary(salary);
                 setDepartment(departmenmt);
             }
-            
+            Job::Job(const Job& j){
+                *this = j;
+            }
+            Job& Job::operator=(const Job& j){}
+                if(this == &j) return *this;
+                setTitle(strdup(j.getTitle()));
+                setSalary(j.getSalary());
+                setDepartment(j.getDepartment());
+                return *this;
+            }
             Job::~Job() {
                  cout <<"Job is deleted" << endl;
             }
@@ -88,4 +97,4 @@ using namespace std;
             {
                 cout <<"Title: " << getTitle() << "\n Salary: " << getSalary() <<  "\n Department: " << getDepartment() << endl;
             }
-        
+        }

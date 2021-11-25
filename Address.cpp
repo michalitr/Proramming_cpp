@@ -1,10 +1,8 @@
 #include <iostream>
-#include "string.h"
+#include <string>
 #include "Address.h"
 
 using namespace std;
-
-       
 
             Address::Address()
             {
@@ -21,6 +19,16 @@ using namespace std;
                 setCity(strdup(City));
                 setPostalCode(postalCode);
                 printAddress();
+            }
+            Address::Address(const Address& addr){
+                *this = addr;
+            }
+            Address& Address::operator=(const Address& addr){
+                if(this == &addr) return *this;
+                setStreet(strdup(addr.getStreet()));
+                setCity(strdup(addr.getCity()));
+                setPostalCode(addr.getPostalCode());
+                return *this;
             }
             Address::~Address() {
                  cout <<"Address is deleted" << endl;
@@ -75,4 +83,5 @@ using namespace std;
             void static Address::printAddress() const
             {
                 cout <<"Street: " << getStreet() << "\n City: " << getCity() <<"\n Postal Code: "<< getPostalCode() << endl;
-            };
+            }
+        };
