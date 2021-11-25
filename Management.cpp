@@ -4,15 +4,16 @@
 
 using namespace std;
 
-    Management::Management(){
-
+    Management::Management(): m_currPerson (0), m_maxPersons(0){
+       Person* p[];
+       prArray = &p;
     }
     Management::Management(const Management &mngr){
 
     }
 
     Management::~Management{
-        delete prArray;
+        delete[] prArray;
     }
     Management& Management::operator= ( const Management &mngr){
 
