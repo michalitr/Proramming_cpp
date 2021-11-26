@@ -4,7 +4,7 @@
 
 using namespace std;
 
-enum DepartmentEnum{PRODUCT, SALES, MARKETING, ART};
+enum DepartmentEnum{PRODUCT, SALES, MARKETING, ART, NONE};
 
 class Job {
     public:

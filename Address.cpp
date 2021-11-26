@@ -52,10 +52,10 @@ using namespace std;
             void Address::setCity(char* city)
             {
                  char* str = "";
-                if (strcmp == 0)
+                if (strcmp(m_City, city) != 0)
                 {
-                cout << getCity() << "'s city updated to "<< city << " 's city.\n" << endl;
-                strcpy(this->m_City, city);
+                    cout << getCity() << "'s city updated to "<< city << " 's city.\n" << endl;
+                    strcpy(this->m_City, city);
                 }else{
                     cout <<"city is illegal" << endl;
                 }

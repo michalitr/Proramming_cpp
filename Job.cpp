@@ -9,7 +9,7 @@ using namespace std;
                 cout << "Making a new job.\n" << endl;
                 setTitle("");
                 setSalary(-1);
-                setDepartment("");
+                setDepartment(NONE);
             }
             Job::Job(const char* title, int salary, DepartmentEnum departmenmt)
             {
@@ -22,20 +22,17 @@ using namespace std;
                 *this = j;
             }
             Job& Job::operator=(const Job& j){}
-                if(this == &j) return *this;
+                if(this == strdup(j)) {return *this};
                 setTitle(strdup(j.getTitle()));
                 setSalary(j.getSalary());
                 setDepartment(j.getDepartment());
                 return *this;
             }
-            Job::~Job() {
-                 cout <<"Job is deleted" << endl;
-            }
             
             void Job::setTitle(const char* title)
             {
-                 char* str = "";
-                if (strcmp == 0)
+                
+                if (strcmp(this->m_title, "") == 0)
                 {
                     cout <<  getTitle() << "'s title updated to " << title << "'s title.\n" << endl;
                     strcpy(this->m_title, title);
@@ -65,10 +62,11 @@ using namespace std;
             }
             void Job::setDepartment(DepartmentEnum department)
             {
+                
                 if (department == PRODUCT || department == SALES || department == MARKETING || department == ART )
                 {
                     this->m_department = department;
-                    cout << getDepartment() << "'s department updated to" << department << "'s department.\n" << endl;
+                    cout << getDepartment() << "'s department updated to" << department << "'s department." << endl;
                 }else{
                      cout <<"deprartment is illegal" << endl;
                 }                
@@ -91,10 +89,13 @@ using namespace std;
                 cout << "This person has retired.\n" << endl;
                 setTitle("");
                 setSalary(-1);
-                setDepartment("");
+                setDepartment(NONE);
             }
             void static Job::printJob() const
             {
                 cout <<"Title: " << getTitle() << "\n Salary: " << getSalary() <<  "\n Department: " << getDepartment() << endl;
+            }
+            Job::~Job() {
+                 cout <<"Job is deleted" << endl;
             }
         }

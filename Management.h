@@ -14,9 +14,12 @@ class Management{
 	    bool addPerson(const Person& person);
 	    //void removePerson(int idx, Position& pos);
         void doubleSize();
-        int getFirstFree() { return m_currPerson};
+        int getFirstFree() { return ++m_currPerson};
         bool removePerson(const Person& person);
         void printPersonsArray();
+    
+    private:
+        void Management::createPersonsArray(int m_maxPersons);
 
     private:
 	    int	m_maxPersons;

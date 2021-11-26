@@ -13,7 +13,7 @@ using namespace std;
                 setEmail("");
                 Address();
                 Job();
-                cout <<"A new person obj was created with\n" << endl;
+                cout <<"A new person obj was created with" << endl;
                 printPerson();
             }
 
@@ -52,10 +52,10 @@ using namespace std;
                 char* str = "";
                 if (strcmp == 0)
                 {
-                    cout << getName(name) << "'s name updated to " << name << ".\n" << endl;
+                    cout << getName(name) << "'s name updated to " << name << "." << endl;
                     strcpy(this->m_name, name);
                 }else{
-                    cout << "Name is empty.\n" << endl;
+                    cout << "Name is empty." << endl;
                 }  
             }
             char* Person::getName(char* name)
@@ -66,11 +66,11 @@ using namespace std;
             {
                 if (strlen(phoneNumber) != 11)
                 {
-                    cout << "This field must start with the digit '0'. Please re-enter a valid parameter.\n" << endl;
+                    cout << "This field must start with the digit '0'. Please re-enter a valid parameter." << endl;
                     return;
                 }
                 strcpy(this->m_phoneNumber, phoneNumber);            
-                cout << getName(this->m_name) << "'s phone number updated to " << phoneNumber <<  ".\n" << endl;           
+                cout << getName(this->m_name) << "'s phone number updated to " << phoneNumber <<  "." << endl;           
             }
             char* Person::getPhoneNumber() const
             {
@@ -81,7 +81,7 @@ using namespace std;
                 bool isValidate = validateEmail(email);
                 if (isValidate)
                 {
-                    cout << getName(this->m_name) << "'s email updated to " << email << ".\n" << endl;
+                    cout << getName(this->m_name) << "'s email updated to " << email << "." << endl;
                     strcpy(this->m_email, email);
                  }
             }
